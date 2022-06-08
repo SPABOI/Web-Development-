@@ -9,13 +9,13 @@
 <hr>
 
 # 1. Calculator: https://spaboi.github.io/Calculator/ 
-<img src="https://user-images.githubusercontent.com/95515701/172518367-b7e7ae0a-27f3-43f9-a3e7-8f1a5a012475.png" style="width:50%; height:30%;">
+<img src="https://user-images.githubusercontent.com/95515701/172518367-b7e7ae0a-27f3-43f9-a3e7-8f1a5a012475.png">
 <hr>
 
-# 17. Movie App: https://spamov.pages.dev/
+# 17. Movie App: https://spamov.pages.dev/ Manual/More Info: https://github.com/SPABOI/SPA-MOV
 <div style="flex-wrap: wrap; justify-content:flex-start; ">
   
-  <img src="https://user-images.githubusercontent.com/95515701/172520884-2f197c11-ed00-41c5-bda9-297c594cd9c5.png" style="width:45%; height:50%;">
-  <img src="https://user-images.githubusercontent.com/95515701/172520931-04df1bf7-7f59-4d19-8098-ab727167c2d7.png" style="width:45%; height:50%;">
+  <img src="https://user-images.githubusercontent.com/95515701/172520884-2f197c11-ed00-41c5-bda9-297c594cd9c5.png">
+  <img src="https://user-images.githubusercontent.com/95515701/172520931-04df1bf7-7f59-4d19-8098-ab727167c2d7.png">
 </div>
 <hr>
