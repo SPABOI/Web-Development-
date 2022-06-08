@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
+
+        .body {
+            flex-direction: row;
+            flex: 1;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .bg {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom right,
+                    #2C3E50, #FD746C,
+                    #FF8235, #ffff1c,
+                    #92FE9D, #00C9FF,
+                    #a044ff, #e73827);
+            background-repeat: no-repeat;
+            background-size: 1000% 1000%;
+            animation: gradient 240s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 0%
+            }
+
+            50% {
+                background-position: 100% 100%
+            }
+
+            100% {
+                background-position: 0% 0%
+            }
+        }
+    </style>
+</head>
+
+<body class="bg">
+    <center style="margin-top: 10%;" class="container">
+        <div class="card-panel white z-depth-5" style="width: 30%; border-radius: 20px; margin-left: 1%;">
+            <span class="black-text"><input autofocus style="font-size: xx-large; font-weight: 900;" id="display"
+                    type="text" data-length="18">
+            </span>
+        </div>
+        <div class="body">
+            <section>
+                <div class="calc-display-box-container" id="calc-display-box-container" style="width: 20%;">
+
+                </div>
+            </section>
+            <div>
+                <a class="btn-floating btn-large waves-effect waves-light  grey z-depth-3" id="clear-text"
+                    style="margin-left: 1%; font-size: 150%; color: black;">AC</a>
+                <a class="btn-floating btn-large waves-effect waves-light  grey z-depth-3" id="negative-button"
+                    style="margin-left: 1%; font-size: 150%; color: black;">+/-</a>
+                <a class="btn-floating btn-large waves-effect waves-light  grey z-depth-3" id="percentage-button"
+                    style="margin-left: 1%; font-size: 150%; color: black;">%</a>
+                <a class="btn-floating btn-large waves-effect waves-light orange" id="division-button"
+                    style="margin-left: 1%; font-size: 150%;">/</a>
+            </div>
+            <div style="margin-top: 1%; font-size: 150%;">
+                <a class="btn-floating btn-large waves-effect waves-light black z-depth-3" id="7-button"
+                    style="margin-left: 1%; font-size: 150%;">7</a>
+                <a class="btn-floating btn-large waves-effect waves-light black z-depth-3" id="8-button"
+                    style="margin-left: 1%; font-size: 150%;">8</a>
+                <a class="btn-floating btn-large waves-effect waves-light black z-depth-3" id="9-button"
+                    style="margin-left: 1%; font-size: 150%;">9</a>
+                <a class="btn-floating btn-large waves-effect waves-light orange z-depth-3" id="multiplication-button"
+                    style="margin-left: 1%; font-size: 150%;">*</a>
+            </div>
+            <div style="margin-top: 1%; font-size: 150%;">
+                <a class="btn-floating btn-large waves-effect waves-light black z-depth-3" id="4-button"
+                    style="margin-left: 1%; font-size: 150%;">4</a>
+                <a class="btn-floating btn-large waves-effect waves-light black z-depth-3" id="5-button"
+                    style="margin-left: 1%; font-size: 150%;">5</a>
+                <a class="btn-floating btn-large waves-effect waves-light black z-depth-3" id="6-button"
+                    style="margin-left: 1%; font-size: 150%;">6</a>
+                <a class="btn-floating btn-large waves-effect waves-light orange z-depth-3" id="subtraction-button"
+                    style="margin-left: 1%; font-size: 150%;">-</a>
+            </div>
+            <div style="margin-top: 1%; font-size: 150%;">
+                <a class="btn-floating btn-large waves-effect waves-light black z-depth-3" id="1-button"
+                    style="margin-left: 1%; font-size: 150%;">1</a>
+                <a class="btn-floating btn-large waves-effect waves-light black z-depth-3" id="2-button"
+                    style="margin-left: 1%; font-size: 150%;">2</a>
+                <a class="btn-floating btn-large waves-effect waves-light black z-depth-3" id="3-button"
+                    style="margin-left: 1%; font-size: 150%;">3</a>
+                <a class="btn-floating btn-large waves-effect waves-light orange z-depth-3" id="addition-button"
+                    style="margin-left: 1%; font-size: 150%;">+</a>
+            </div>
+            <div style="margin-top: 1%; font-size: 150%;">
+                <a class="btn-large waves-effect waves-light black z-depth-3" id="0-button"
+                    style="margin-left: 1%; font-size: 150%; width: 5%; border-radius: 40px; padding-right: 105px;">0</a>
+                <a class="btn-floating btn-large waves-effect waves-light black z-depth-3" id="decimal-button"
+                    style="margin-left: 1%; font-size: 150%;">.</a>
+                <a class="btn-floating btn-large waves-effect waves-light orange z-depth-3" id="equal-button"
+                    style="margin-left: 1%; font-size: 150%;">=</a>
+            </div>
+        </div>
+    </center>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="./index.js"></script>
+
+</html>
