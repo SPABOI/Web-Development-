@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Ajay Sathish Preetha - Developer, Bro, Friend, Student & Blogger etc.</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="description" content="Welcome to the hackerspace. 
+    Developer Ajay Sathish Preetha's portfolio website. 
+    A one stop shop to all his projects, contacts, services, blogs, websites, apps, etc.">
+	<meta name="keywords" content="Ajay Sathish Preetha, Ajay SP, Ajay, Retr0, SPABOI, Wi-Fi, Developer Portfolio">
+	<meta name="author" content="Ajay Sathish Preetha">
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+</head>
+
+<body class="is-preload" bgcolor="black">
+	<div id="wrapper">
+		<div id="bg"></div>
+		<div id="main">
+
+			<!-- Header -->
+			<header id="header">
+				<h1>Ajay Sathish Preetha</h1>
+				<p id="about" style="font-weight: 900; font-family: monospace;">Developer &nbsp;&bull;&nbsp; Bro
+					&nbsp;&bull;&nbsp; Friend
+					&nbsp;&bull;&nbsp; Student &nbsp;&bull;&nbsp; Blogger</p>
+				<nav>
+					<ul>
+						<li><a class="fab fa-github" id="github" href="https://github.com/SPABOI" target="_blank"><span
+									class="label">Github</span></a></li>
+						<li><a class="fa fa-book" id="blog" href="https://retro.hashnode.dev/" target="_blank"><span
+									class="label">Blog</span></a></li>
+						<li><a class="fab fa-discord" id="discord"
+								href="https://discordid.netlify.app/?id=805285908563755038" target="_blank"><span
+									class="label" href="">Discord</span></a></li>
+						<li><a class="fa fa-podcast" id="movie" href="https://spamov.pages.dev/" target="_blank"><span
+									class="label">Movie</span></a></li>
+						<li><a class="fa fa-newspaper" id="daily-dev" href="https://app.daily.dev/Ajay_SP"
+								target="_blank"><span class="label">Daily Dev</span></a></li>
+						<li><a class="fa fa-code" id="dev.to" href="https://dev.to/spaboi" target="_blank"><span
+									class="label">Dev.to</span></a></li>
+						<li><a class="fa fa-share" id="share"><span class="label">Share</span></a></li>
+					</ul>
+				</nav>
+			</header>
+		</div>
+	</div>
+	<script>
+		window.onload = function () { document.body.classList.remove('is-preload'); }
+		window.ontouchmove = function () { return false; }
+		window.onorientationchange = function () { document.body.scrollTop = 0; }
+
+		document.getElementById("share").addEventListener('click', () => {
+			if (navigator.share !== undefined) {
+				let ttl = "Ajay Sathish Preetha's Developer Portfolio";
+				let txt = "Ajay Sathish Preetha's Developer Portfolio. Student, Developer, Bro, Friend, & Blogger. Check out his github repos, blogs, discord etc. Make sure to share it with your friends and family. Thank You!";
+				//use text and/or url
+				navigator.share({ title: ttl, text: txt, url: url })
+					.then(_ => console.log('success.'))
+					.catch((err) => console.log(err));
+			} else {
+				document.querySelector('p').textContent = 'navigator.share is not supported';
+				console.log('navigator.share is not supported here.');
+			}
+		});
+	</script>
+	<script src="./index.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sharer.js@latest/sharer.min.js"></script>
+</body>
+
+</html>
