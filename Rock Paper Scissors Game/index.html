@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+    <style>
+        .rock {
+            background: transparent;
+            border: none;
+            color: yellow;
+            height: 100px;
+            width: 100px;
+            cursor: pointer;
+        }
+
+        .rock:hover {
+            color: orange;
+        }
+
+        .paper:hover {
+            color: orange;
+        }
+
+        .scissor:hover {
+            color: orange;
+        }
+
+        .paper {
+            background: transparent;
+            border: none;
+            color: yellow;
+            height: 100px;
+            width: 100px;
+            cursor: pointer;
+        }
+
+        .scissor {
+            background: transparent;
+            border: none;
+            color: yellow;
+            height: 100px;
+            width: 100px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body class="container" style="background-color: rgb(50, 50, 50);">
+    <center>
+        <div style="margin-top: 15%;">
+            <span style="font-weight: 900; font-family: monospace; font-size: x-large;">
+                <h4 style="font-weight: 900; color: yellow;">Rock Paper Scissors</h4>
+                <div>
+                    <h5 style="font-weight: 900; margin-top: -2%; color: yellow;">You: <span id="player-score">0</span>
+                        - Computer:
+                        <span id="computer-score">0</span>
+                    </h5>
+                    <h5 style="font-weight: 900; margin-top: -2%; color: yellow;" id="moves"><span id="moves_left">First
+                            To 10 Points Wins!</h5>
+                </div>
+                <div class="rock-paper-scissor" style="margin-top: -2%;">
+                    <button class="rock" id="rock"><i class="far fa-hand-rock fa-5x"></i></button>
+                    <button class="paper" id="paper"><i class="far fa-hand-paper fa-5x"></i></button>
+                    <button class="scissor" id="scissor"><i class="far fa-hand-scissors fa-5x"></i></button>
+                </div>
+                <h5 style="font-weight: 900; color: yellow; margin-top: -0.5%;" id="player-choice"></h5>
+                <h5 style="font-weight: 900; margin-top: -2%; color: yellow;" id="computer-choice"></h5>
+                <h5 style="font-weight: 900; margin-top: -2%; color: yellow;" id="match_result"></h5>
+            </span>
+        </div>
+    </center>
+
+    <script>
+        let options = ["ROCK", "PAPER", "SCISSOR"]
+        let rand = Math.floor(Math.random() * options.length)
+        let computer = options[rand]
+
+        let player_choice_text = document.getElementById("player-choice")
+        let computer_choice_text = document.getElementById("computer-choice")
+        let match_result = document.getElementById("match_result")
+
+        let player_score = document.getElementById("player-score")
+        let comp_score = document.getElementById("computer-score")
+
+        let player = 0
+        let comp = 0
+
+        document.getElementById("rock").addEventListener("click", () => {
+            player_choice_text.innerHTML = `You Choose: <span style="color: rgb(0, 255, 0); font-weight: 900;">ROCK</span>`
+            computer_choice_text.innerHTML = `Computer Choose: <span style="color: rgb(0, 255, 0); font-weight: 900;">${computer}</span>`
+            if (computer == "ROCK") {
+                match_result.innerHTML = `<span style="color: rgb(0, 255, 0); font-weight: 900;">ITS A TIE</span>`
+                player += 1
+                comp += 1
+                player_score.innerText = player
+                comp_score.innerHTML = comp
+            }
+            if (computer == "PAPER") {
+                match_result.innerHTML = `<span style="color: rgb(255, 0, 0); font-weight: 900;">YOU LOSE</span>`
+                comp += 1
+                comp_score.innerHTML = comp
+            }
+            if (computer == "SCISSOR") {
+                match_result.innerHTML = `<span style="color: rgb(0, 255, 0); font-weight: 900;">YOU WIN</span>`
+                player += 1
+                player_score.innerText = player
+            }
+            if (comp == 10) {
+                match_result.innerHTML = `<span style="color: rgb(255, 127, 0); font-weight: 900;">GAME OVER: COMPUTER WINS" </span>`
+                setTimeout(function () { location.reload() }, 1000)
+            }
+            if (player == 10) {
+                match_result.innerHTML = `<span style="color: rgb(255, 127, 0); font-weight: 900;">GAME OVER: PLAYER WINS" </span>`
+                setTimeout(function () { location.reload() }, 1000)
+            }
+            if (player == 10 && comp == 10) {
+                match_result.innerHTML = `<span style="color: rgb(255, 127, 0); font-weight: 900;">GAME OVER: BOTH COMPUTER AND PLAYER WINS" </span>`
+                setTimeout(function () { location.reload() }, 1000)
+            }
+            rand = Math.floor(Math.random() * options.length)
+            computer = options[rand]
+        })
+
+        document.getElementById("paper").addEventListener("click", () => {
+            player_choice_text.innerHTML = `You Choose: <span style="color: rgb(0, 255, 0); font-weight: 900;">PAPER</span>`
+            computer_choice_text.innerHTML = `Computer Choose: <span style="color: rgb(0, 255, 0); font-weight: 900;">${computer}</span>`
+            if (computer == "ROCK") {
+                match_result.innerHTML = `<span style="color: rgb(0, 255, 0); font-weight: 900;">YOU WIN</span>`
+                player += 1
+                player_score.innerText = player
+            }
+            if (computer == "PAPER") {
+                match_result.innerHTML = `<span style="color: rgb(0, 255, 0); font-weight: 900;">ITS A TIE</span>`
+                player += 1
+                comp += 1
+                player_score.innerText = player
+                comp_score.innerHTML = comp
+            }
+            if (computer == "SCISSOR") {
+                match_result.innerHTML = `<span style="color: rgb(255, 0, 0); font-weight: 900;">YOU LOSE</span>`
+                comp += 1
+                comp_score.innerHTML = comp
+            }
+            if (comp == 10) {
+                match_result.innerHTML = `<span style="color: rgb(255, 127, 0); font-weight: 900;">GAME OVER: COMPUTER WINS" </span>`
+                setTimeout(function () { location.reload() }, 1000)
+            }
+            if (player == 10) {
+                match_result.innerHTML = `<span style="color: rgb(255, 127, 0); font-weight: 900;">GAME OVER: PLAYER WINS" </span>`
+                setTimeout(function () { location.reload() }, 1000)
+            }
+            if (player == 10 && comp == 10) {
+                match_result.innerHTML = `<span style="color: rgb(255, 127, 0); font-weight: 900;">GAME OVER: BOTH COMPUTER AND PLAYER WINS" </span>`
+                setTimeout(function () { location.reload() }, 1000)
+            }
+            rand = Math.floor(Math.random() * options.length)
+            computer = options[rand]
+        })
+
+        document.getElementById("scissor").addEventListener("click", () => {
+            player_choice_text.innerHTML = `You Choose: <span style="color: rgb(0, 255, 0); font-weight: 900;">SCISSOR</span>`
+            computer_choice_text.innerHTML = `Computer Choose: <span style="color: rgb(0, 255, 0); font-weight: 900;">${computer}</span>`
+            if (computer == "ROCK") {
+                match_result.innerHTML = `<span style="color: rgb(255, 0, 0); font-weight: 900;">YOU LOSE</span>`
+                comp += 1
+                comp_score.innerHTML = comp
+            }
+            if (computer == "PAPER") {
+                match_result.innerHTML = `<span style="color: rgb(0, 255, 0); font-weight: 900;">YOU WIN</span>`
+                player += 1
+                player_score.innerText = player
+            }
+            if (computer == "SCISSOR") {
+                match_result.innerHTML = `<span style="color: rgb(0, 255, 0); font-weight: 900;">ITS A TIE</span>`
+                player += 1
+                comp += 1
+                player_score.innerText = player
+                comp_score.innerHTML = comp
+            }
+            if (comp == 10) {
+                match_result.innerHTML = `<span style="color: rgb(255, 127, 0); font-weight: 900;">GAME OVER: COMPUTER WINS" </span>`
+                setTimeout(function () { location.reload() }, 1000)
+            }
+            if (player == 10) {
+                match_result.innerHTML = `<span style="color: rgb(255, 127, 0); font-weight: 900;">GAME OVER: PLAYER WINS" </span>`
+                setTimeout(function () { location.reload() }, 1000)
+            }
+            if (player == 10 && comp == 10) {
+                match_result.innerHTML = `<span style="color: rgb(255, 127, 0); font-weight: 900;">GAME OVER: BOTH COMPUTER AND PLAYER WINS" </span>`
+                setTimeout(function () { location.reload() }, 1000)
+            }
+            rand = Math.floor(Math.random() * options.length)
+            computer = options[rand]
+        })
+    </script>
+</body>
+
+</html>
