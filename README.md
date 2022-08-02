@@ -9,7 +9,7 @@
 
 2. Quiz App
 
-3. Rock Paper Scissors 
+3. Rock Paper Scissors ✅ 
 
 4. Note App
 
